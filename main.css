@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    grid-template-areas: 
+    "header header header"
+    "cont cont cont"
+    "footer footer footer";
+}
+
+/**
+* TODO: ESTILOS DEL HEADER
+*/
+
+header {
+    grid-area: header;
+    width: 100%;
+    position: relative;
+    background: red;
+}
+
+.navbar {
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 5px 50px;
+    background: #FFABCF;
+    z-index: 1000;
+}
+
+.navbar a {
+    font-weight: lighter;
+    font-family: 'Nunito', sans-serif;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+}
+
+.navbar .nav-links ul li a::after {
+    content: "";
+    height: 2px;
+    width: 0;
+    background-color: #ffffff;
+    display: block;
+    transition: all .3s;
+}
+
+.navbar .nav-links ul li a:hover::after {
+    width: 100%;
+}
+
+.navbar .logo {
+    width: auto;
+    height: auto;
+}
+
+.navbar .logo:hover {
+    transform: scale(1.1);
+    transition: all .3s ease-in-out;
+}
+
+.navbar .nav-links ul {
+    display: flex;
+}
+
+.navbar .nav-links ul li {
+    margin: 0 25px;
+    transition: all .3s;
+    padding: 10px 0;
+}
+
+.navbar .nav-links ul li:hover {
+    transform: scale(1.1);
+}
+
+.navbar .menu-hamburger {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 30px;
+    width: 35px;
+}
+
+/**
+* TODO: ESTILOS DEL BODY 
+*/
+
+main {
+    grid-area: cont;
+    background: white;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 55px;
+    padding: 30px 0;
+}
+
+.titulo-calendario {
+    width: 100%;
+    background: #FFABCF;
+    color: white;
+    padding: 20px;
+    font-family: 'Poppins';
+    display: none;
+    font-size: 15px;
+}
+
+.meses {
+    border: 1px solid black;
+    width: 60%;
+    height: auto;
+    margin: 20px 0;
+    text-align: center;
+    font-family: 'Nunito Sans';
+}
+
+.meses h1 {
+    background: #FFABCF;
+    border: 1px solid black;
+}
+
+.meses ul {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+}
+
+.dia-semana {
+    background: #ffe6f1;
+    font-weight: bold;
+}
+
+.meses ul li {
+    border: 1px solid rgb(0, 0, 0);
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.meses ul a {
+    background: #ffd8e9;
+    font-weight: bolder;
+    transition: linear 1s;
+    color: #000000;
+}
+
+.meses ul a:hover {
+    transform: scale(1.1);
+    transition: linear 1s;
+    filter: drop-shadow(0 0 1px black);
+}
+
+.first-day-enero {
+    grid-column-start: 2;
+}
+
+.first-day-febrero {
+    grid-column-start: 5;
+}
+
+.first-day-marzo {
+    grid-column-start: 6;
+}
+
+.first-day-mayo {
+    grid-column-start: 4;
+}
+
+.first-day-junio {
+    grid-column-start: 7;
+}
+
+.first-day-agosto {
+    grid-column-start: 5;
+}
+
+.first-day-octubre {
+    grid-column-start: 3;
+}
+
+.first-day-noviembre {
+    grid-column-start: 6;
+}
+
+/** 
+* TODO: ESTILOS DEL FOOTER
+*/
+
+footer {
+    grid-area: footer;
+    background: #FFABCF;
+}
+
+.container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+}
+
+.footer {
+    padding: 70px 0;
+    z-index: 10;
+}
+
+.footer-col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+    font-family: 'Nunito', sans-serif;
+}
+
+.footer-col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: #000000;
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    display: block;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.footer-col ul li a:hover {
+    color: #000000;
+    padding-left: 8px;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+.fa-facebook-f:hover {
+    color: #3b5998;
+}
+
+.fa-twitter:hover {
+    color: #00aced;
+}
+
+.fa-youtube:hover {
+    color: #FF0000;
+}
+
+.fa-pinterest:hover {
+    color: #E60023;
+}
+
+.fa-instagram:hover {
+    color: #bc2a8d;
+}
+
+.fa-google:hover {
+    color: #dd4b39;
+}
+
+.footer-col .logo-footer {
+    width: 300px;
+    height: 150px;
+    filter: drop-shadow(0 0 3px black);
+}
+
+.footer-bottom {
+    background: #0D0D0D;
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-bottom a {
+    color: #fff;
+    font-size: 14px;
+    margin-left: 20px;
+    text-decoration: none;
+}
+
+.first-box {
+    margin: 5px auto;
+}
+
+/**
+* ? USO DE MEDIAQUERIES
+*/
+
+@media screen and (max-width: 900px) {
+    header {
+        background-image: url(https://e0.pxfuel.com/wallpapers/438/710/desktop-wallpaper-aesthetic-pizza-in-2020-pizza-food.jpg);
+    }
+
+    .footer-col {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .navbar {
+        padding: 0;
+    }
+
+    .navbar a {
+        color: #000000;
+    }
+
+    .abajo {
+        background: rgba(255, 255, 255, 0.648);
+    }
+
+    .abajo .nav-links ul li a {
+        color: rgb(0, 0, 0);
+    }
+
+    .navbar .logo {
+        display: none;
+    }
+
+    .navbar .menu-hamburger {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menu-hamburger {
+        display: flex;
+        flex-direction: column;
+        width: 3rem;
+        height: 3rem;
+        border: 0;
+        background: transparent;
+        filter: drop-shadow(0 0 1px black);
+    }
+
+    .menu-hamburger>div {
+        background: rgb(255, 255, 255);
+        height: 2px;
+        width: 100%;
+        border-radius: 5px;
+        transition: all .5s;
+        transform-origin: right;
+        margin: 10px 0;
+    }
+
+    .menu-hamburger:hover div:first-child {
+        transform: rotate(-45deg);
+    }
+
+    .menu-hamburger:hover div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-hamburger:hover div:last-child {
+        transform: rotate(45deg);
+    }
+
+    .nav-links {
+        top: 0;
+        left: 0;
+        position: absolute;
+        background-color: rgba(225, 225, 225, 0.20);
+        backdrop-filter: blur(8px);
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-left: -100%;
+        transition: all 0.5s ease;
+    }
+
+    .nav-links.mobile-menu {
+        margin-left: 0;
+    }
+
+    .nav-links ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar .nav-links ul li {
+        margin: 25px 0;
+        font-size: 1.2em;
+    }
+
+    main {
+        padding: 10px;
+        margin-top: 10px;
+    }
+
+    .titulo-calendario {
+        display: block;
+    }
+
+    .meses {
+        width: 100%;
+    }
+
+}
